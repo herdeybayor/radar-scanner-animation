@@ -1,50 +1,90 @@
-# Welcome to your Expo app 👋
+# Radar Scanner Demo 🎯
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A demo project showcasing a beautiful and customizable radar scanner animation built with React Native Skia and Expo.
 
-## Get started
+![Demo Preview](./assets/demo.gif)
 
-1. Install dependencies
+## Overview
 
-   ```bash
-   npm install
-   ```
+This project demonstrates a reusable radar scanner component that can be used in map interfaces, location markers, or any scanning animation needs. The component features smooth 360° rotation animation, pulsating rings effect, and is fully customizable.
 
-2. Start the app
+## Try it out
 
-   ```bash
+1. Clone the repository
+
+    ```bash
+    git clone https://github.com/yourusername/radar-scanner-demo.git
+    cd radar-scanner-demo
+    ```
+
+2. Install dependencies
+
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+
+3. Start the app
+    ```bash
     npx expo start
-   ```
+    ```
 
-In the output, you'll find options to open the app in a
+You can run the demo on:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+-   [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+-   [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+-   [Expo Go](https://expo.dev/go) on your physical device
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Project Structure
 
-## Get a fresh project
+-   `/app` - Demo application using Expo Router
+-   `/components/RadarScanner` - The reusable radar scanner component (see its [README](./components/RadarScanner/README.md) for component documentation)
+-   `/assets` - Images and other static assets
 
-When you're ready, run:
+## Using the Component
 
-```bash
-npm run reset-project
+To use the RadarScanner in your own project, you can:
+
+1. Copy the entire `/components/RadarScanner` directory to your project
+2. Follow the installation and usage instructions in the [component's README](./components/RadarScanner/README.md)
+
+Quick example:
+
+```tsx
+import { RadarScanner } from "@/components/RadarScanner";
+
+function MyComponent() {
+    return (
+        <RadarScanner
+            size={200}
+            colors={{
+                rings: "#aa7ce3c5",
+                gradient: {
+                    start: "#8249C6",
+                    end: "#9971CA00",
+                },
+                center: {
+                    outer: "#FFFFFF",
+                    middle: "#B882FA",
+                    inner: "#6D39AA",
+                },
+            }}
+        />
+    );
+}
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Tech Stack
 
-## Learn more
+-   [Expo](https://docs.expo.dev/) - Development platform
+-   [@shopify/react-native-skia](https://shopify.github.io/react-native-skia/) - 2D graphics
+-   [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/) - Animations
 
-To learn more about developing your project with Expo, look at the following resources:
+## Contributing
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Join the community
+## License
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+MIT

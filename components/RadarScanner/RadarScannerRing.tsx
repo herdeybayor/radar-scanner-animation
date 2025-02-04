@@ -1,9 +1,9 @@
 import { Circle, Group, mix } from "@shopify/react-native-skia";
 import { useEffect } from "react";
 import { useDerivedValue, useSharedValue, withRepeat, withTiming, withDelay, Easing } from "react-native-reanimated";
-import type { MarkerScannerRingProps } from "./types";
+import type { RadarScannerRingProps } from "./types";
 
-export function MarkerScannerRing({ size, index, color, timing }: MarkerScannerRingProps) {
+export function RadarScannerRing({ size, index, color, timing }: RadarScannerRingProps) {
     const progress = useSharedValue(0);
 
     const transform = useDerivedValue(() => {

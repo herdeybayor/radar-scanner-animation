@@ -1,12 +1,12 @@
 import { Canvas, Circle, Group, Path, vec, LinearGradient } from "@shopify/react-native-skia";
 import { useEffect } from "react";
 import { useDerivedValue, useSharedValue, withRepeat, withTiming, Easing } from "react-native-reanimated";
-import { MarkerScannerRing } from "./MarkerScannerRing";
+import { RadarScannerRing } from "./RadarScannerRing";
 import { DEFAULT_SCANNER_CONFIG, CIRCLE_SIZES } from "./constants";
 import { createScannerPath, getCenterPoint, createVectorPoint } from "./utils";
-import type { MarkerScannerProps } from "./types";
+import type { RadarScannerProps } from "./types";
 
-export function MarkerScanner({ size = DEFAULT_SCANNER_CONFIG.size, colors = DEFAULT_SCANNER_CONFIG.colors, timing = DEFAULT_SCANNER_CONFIG.timing }: MarkerScannerProps) {
+export function RadarScanner({ size = DEFAULT_SCANNER_CONFIG.size, colors = DEFAULT_SCANNER_CONFIG.colors, timing = DEFAULT_SCANNER_CONFIG.timing }: RadarScannerProps) {
     const center = getCenterPoint(size);
     const path = createScannerPath(size);
     const rotate = useSharedValue(0);
@@ -38,7 +38,7 @@ export function MarkerScanner({ size = DEFAULT_SCANNER_CONFIG.size, colors = DEF
     return (
         <Canvas style={{ width: size, height: size }}>
             {[0, 1, 2].map((index) => (
-                <MarkerScannerRing
+                <RadarScannerRing
                     key={index}
                     size={size}
                     index={index}
@@ -70,4 +70,4 @@ export function MarkerScanner({ size = DEFAULT_SCANNER_CONFIG.size, colors = DEF
     );
 }
 
-export type { MarkerScannerProps } from "./types";
+export type { RadarScannerProps } from "./types";

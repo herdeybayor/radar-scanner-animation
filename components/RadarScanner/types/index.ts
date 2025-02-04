@@ -1,4 +1,4 @@
-export interface MarkerScannerProps {
+export interface RadarScannerProps {
     size?: number;
     colors?: {
         rings?: string;
@@ -19,7 +19,7 @@ export interface MarkerScannerProps {
     };
 }
 
-export interface MarkerScannerRingProps {
+export interface RadarScannerRingProps {
     size: number;
     index: number;
     color: string;

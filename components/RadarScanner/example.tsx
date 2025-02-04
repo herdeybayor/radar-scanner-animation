@@ -1,10 +1,10 @@
 import { View, Dimensions } from "react-native";
-import { MarkerScanner } from "./index";
+import { RadarScanner } from "./index";
 
 const _windowWidth = Dimensions.get("window").width;
 const _canvasWidth = _windowWidth * 0.8;
 
-export default function MarkerScannerExample() {
+export default function RadarScannerExample() {
     return (
         <View
             style={{
@@ -13,7 +13,7 @@ export default function MarkerScannerExample() {
                 alignItems: "center",
             }}
         >
-            <MarkerScanner
+            <RadarScanner
                 size={_canvasWidth}
                 // Optional custom colors
                 colors={{
