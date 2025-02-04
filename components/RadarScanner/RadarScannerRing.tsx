@@ -22,7 +22,7 @@ export function RadarScannerRing({ size, index, color, timing }: RadarScannerRin
                     easing: Easing.out(Easing.ease),
                 }),
                 -1,
-                true
+                false
             )
         );
     }, [progress, index, timing]);
